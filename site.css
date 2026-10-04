@@ -24,7 +24,7 @@ section{padding:88px 0}
 section.alt{background:var(--card)}
 h2{font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0 0 .4em}
 .sub{color:var(--mute);font-size:19px;max-width:36em;margin:0 0 48px}
-.steps,.feats,.packs{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+.steps,.feats{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
 .card{background:var(--card);border-radius:20px;padding:28px}
 section.alt .card{background:var(--bg)}
 .card h3{margin:.2em 0 .3em;font-size:21px}
@@ -32,12 +32,10 @@ section.alt .card{background:var(--bg)}
 .n{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--crimson);color:#fff;font-weight:700}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .pack{text-align:center}
-.pack b{display:block;font-size:40px;letter-spacing:-.02em}
-.pack em{color:var(--crimson);font-style:normal;font-weight:600}
 details{border-top:1px solid var(--line);padding:18px 0}
 details:last-child{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;font-weight:600}
 details p{color:var(--mute);margin:.6em 0 0}
 footer{padding:40px 0 60px;color:var(--mute);font-size:14px;text-align:center}
 footer a{color:var(--mute);margin:0 10px}
-@media(max-width:760px){.hero .wrap,.split{grid-template-columns:1fr}.steps,.feats,.packs{grid-template-columns:1fr}.hero .wrap>div:first-child{text-align:center}.lead{margin:auto}}
+@media(max-width:760px){.hero .wrap,.split{grid-template-columns:1fr}.steps,.feats{grid-template-columns:1fr}.hero .wrap>div:first-child{text-align:center}.lead{margin:auto}}
