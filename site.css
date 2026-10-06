@@ -24,17 +24,31 @@ section{padding:88px 0}
 section.alt{background:var(--card)}
 h2{font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.015em;margin:0 0 .4em}
 .sub{color:var(--mute);font-size:19px;max-width:36em;margin:0 0 48px}
-.steps,.feats{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
+.steps,.feats,.packs{display:grid;gap:20px;grid-template-columns:repeat(3,1fr)}
 .card{background:var(--card);border-radius:20px;padding:28px}
 section.alt .card{background:var(--bg)}
 .card h3{margin:.2em 0 .3em;font-size:21px}
 .card p{margin:0;color:var(--mute)}
 .n{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--crimson);color:#fff;font-weight:700}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.pack{text-align:center}
+.pack b{display:block;font-size:40px;letter-spacing:-.02em}
+.pack em{color:var(--crimson);font-style:normal;font-weight:600}
 details{border-top:1px solid var(--line);padding:18px 0}
 details:last-child{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;font-weight:600}
 details p{color:var(--mute);margin:.6em 0 0}
 footer{padding:40px 0 60px;color:var(--mute);font-size:14px;text-align:center}
 footer a{color:var(--mute);margin:0 10px}
-@media(max-width:760px){.hero .wrap,.split{grid-template-columns:1fr}.steps,.feats{grid-template-columns:1fr}.hero .wrap>div:first-child{text-align:center}.lead{margin:auto}}
+@media(max-width:760px){.hero .wrap,.split{grid-template-columns:1fr}.steps,.feats,.packs{grid-template-columns:1fr}.hero .wrap>div:first-child{text-align:center}.lead{margin:auto}}
+#tutorial .phone{margin-bottom:16px}
+/* hero: crossfade transcript → summary → report */
+.cycle img{opacity:0;animation:cyc 12s infinite}
+.cycle img:nth-child(2){animation-delay:4s}.cycle img:nth-child(3){animation-delay:8s}
+@keyframes cyc{0%,30%{opacity:1}36%,94%{opacity:0}100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.cycle img{animation:none}.cycle img:last-child{opacity:1}}
+/* before/after slider */
+.compare{--x:50%}
+.compare .after{clip-path:inset(0 0 0 var(--x))}
+.compare::after{content:"";position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.6);pointer-events:none}
+.compare input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
